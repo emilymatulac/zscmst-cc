@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | General Form Elements</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'assets/dist/css/adminlte.min.css' %}">
+    <!-- Toaster style -->
+    <link rel="stylesheet" href="{% static 'assets/dist/css/toastr.css' %}">
+
+
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="../../index3.html" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <div class="sidebar">
+      <center>
+        <br>
+        <img src="{% static 'assets/dist/img/ZSCMST.png' %}" width="110">
+        <br>
+        <br>
+        <img src="{% static 'assets/dist/img/ISO.jpg' %}" width="100">
+      </center>
+    </div>
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+ 
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+              <h3>HELP US SERVE YOU BETTER!</h3>
+              <p>This client Satisfactory Measurement (CSM) tracks the customer experience of government offices. Your Feedback on your recent concluded transaction will help this office provide a better service. Personal information shared will be kept confidential and you always have the option to not answer this form.</p>
+
+            <!-- general form elements -->
+          </div>
+            </div>
+          
+
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">PERSONAL INFORMATION</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start  -->
+              <form class="form-with-validation" action="insertEval" method="POST" >
+                {% csrf_token %}
+                <div class="card-body col-md-12">
+                  <div class="form-group row col-md-12">
+                    <div class="form-group col-md-1">
+                    <b>Client Type:</b>
+                    </div>
+                    <div class="form-group col-md-1">
+                      <input type="radio" class="form-check-input" id="rdoClientType" name="rdoClientType" value="Citizen"> 
+                      <label class="form-check-label" >Citizen</label>
+                    </div>
+                    <div class="form-group col-md-1">
+                      <input type="radio" class="form-check-input" id="rdoClientType" name="rdoClientType" value="Business"> 
+                      <label class="form-check-label" >Business</label>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <input type="radio" class="form-check-input" id="rdoClientType" name="rdoClientType" value="Government"> 
+                      <label class="form-check-label" >Government <br>(Employee or another agency)</label>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <div class="form-group col-md-6">
+                      <label for="txtDate">Name(Optional):</label>
+                      <input type="text" class="form-control" id="txtDate" name="txtName" placeholder="Complete">
+                    </div>
+
+                    <div class="row col-md-12">
+                      <div class="form-group col-md-2">
+                        <label for="rdoSex">Sex</label><br>
+                        <input type="radio" class="" id="rdoSex" name="rdoSex" value="M">  Male   
+                        <input type="radio" class="" id="rdoSex" name="rdoSex" value="F">  Female
+                      </div>
+                      <div class="form-group col-md-1">
+                        <label for="txtAge">Age</label>
+                        <input type="number" value="0" class="form-control" id="txtAge"  name="txtAge">
+                      </div>
+                    </div>
+        
+                    <div class="row col-md-12">
+                      <div class="form-group col-md-2">
+                        <label for="txtDate">Region of residence:</label>
+                        <select class="form-control" id="txtRegion" name="txtRegion">
+                            <optio value="0">-Select Region</option>
+                            <option value="R1">REGION I</option>
+                            <option value="R2">REGION II</option>
+                            <option value="R3">REGION III</option>
+                            <option value="R4">REGION IV</option>
+                            <option value="R5">REGION V</option>
+                            <option value="R6">REGION VI</option>
+                            <option value="R7">REGION VII</option>
+                            <option value="R8">REGION VIII</option>
+                            <option value="R9" selected>REGION IX</option>
+                            <option value="R10">REGION X</option>
+                            <option value="R11">REGION XI</option>
+                            <option value="R12">REGION XII</option>
+                            <option value="R13">REGION XIII</option>
+                            <option value="NCR">NCR</option>
+                            <option value="CAR">NCR</option>
+                            <option value="BARMM">BARMM</option>
+                            <option value="MIMAROPA">MIMAROPA</option>
+                        </select>
+                      </div>
+        
+                      <div class="form-group col-md-2">
+                        <label for="txtDate">Service Availed</label>
+                        <input type="text" class="form-control" id="txtService" name="txtService">
+                      </div>
+                    </div>
+                    </div>
+                   
+                </div>
+                <!-- /.card-body -->
+             
+            </div>
+            <!-- /.card -->
+
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">PART I.</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <p>INSTRUCTIONS: Check marck(/) your answer to the Citizen's Charter(CC) questions. The Citizen's Charter is an official document that reflects the services of a governmeent agency/office including its requirements, fees, and processing times among others.</p>
+                 
+                <table>
+                  <tr>
+                    <td width="10%" style="vertical-align: top;">CC1</td>
+                    <td width="90%">Which of the following best describes your awareness of a CC?
+                      <br><input type="radio" class="form-check-input" id="rdoCC1" name="rdoCC1" value="1">
+                        1. I know what a cc is and I saw this office's CC.
+                      <br><input type="radio" class="form-check-input" id="rdoCC1" name="rdoCC1" value="2">
+                        2. I know what a cc is but I did NOT see this office's CC.
+                      <br><input type="radio" class="form-check-input" id="rdoCC1" name="rdoCC1" value="3">
+                        3. I learned of the CC only when I saw this Office's CC.
+                      <br><input type="radio" class="form-check-input" id="rdoCC1" name="rdoCC1" value="4">
+                        4. I do not know what a CC is and I did not see one in this office. (Answer 'N/A' on CC2 and CC3)
+                        <br>
+                        <br>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="10%" style="vertical-align: top;">CC2</td>
+                    <td width="90%">If aware of CC (answered 1-3 in CC1), would you say that the CC of this off was ...?
+                      <br><input type="radio" class="form-check-input" id="rdoCC2" name="rdoCC2" value="1">
+                        1. Easy to see
+                      <br><input type="radio" class="form-check-input" id="rdoCC2" name="rdoCC2" value="2">
+                        2. Somewhat easy to see
+                      <br><input type="radio" class="form-check-input" id="rdoCC2" name="rdoCC2" value="3">
+                        3. Difficult to see.
+                      <br><input type="radio" class="form-check-input" id="rdoCC2" name="rdoCC2" value="4">
+                        4. Not visible at all
+                      <br><input type="radio" class="form-check-input" id="rdoCC2" name="rdoCC2" value="5">
+                       5. N/A
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="10%" style="vertical-align: top;">CC3</td>
+                    <td width="90%">If aware of CC (answered 1-3 in CC1), how much did the CC help you in your transaction?
+                      <br><input type="radio" class="form-check-input" id="rdoCC3" name="rdoCC3" value="1">
+                       1. Helped very much.
+                      <br><input type="radio" class="form-check-input" id="rdoCC3"  name="rdoCC3" value="2">
+                       2. Somewhat helped.
+                      <br><input type="radio" class="form-check-input" id="rdoCC3"  name="rdoCC3" value="3">
+                       3. Did not helped.
+                      <br><input type="radio" class="form-check-input" id="rdoCC3"  name="rdoCC3" value="4">
+                       4. N/A
+                      <br><input type="radio" class="form-check-input" id="rdoCC3"  name="rdoCC3" value="5">
+                       5. N/A
+                    </td>
+                  </tr>
+                </table>
+               
+
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+            <!-- Input addon -->
+            <div class="card card-info">
+              <div class="card-header">
+                <h3 class="card-title">PART II.</h3>
+              </div>
+              <div class="card-body">
+                INSTRUCTIONS: For SQD 0-8, please put a check(/) on the column that best corresponds to you answer.
+                <br>
+
+                <div class="row col-md-12">
+                  <div class="form-group col-sm-12">
+                    <label>SQDO. I am satisfied with the service that I availed.</label>
+                  </div>
+                  <div class="row col-md-12">
+                        <div class="form-check col-md-2" style="align-self: middle;">
+                          <img width="40px" src="{% static 'assets/dist/img/1.jpg' %}"><br>
+                          <input type="radio" class="form-check-input" id="rdosqd0" value="5" name="rdosqd0"> Strongly Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/2.jpg' %}"><br>
+                            <input type="radio" class="form-check-input" id="rdosqd0" value="4" name="rdosqd0"> Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/3.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd0" value="3" name="rdosqd0">Neither Agree nor Disagee
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/4.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd0" value="2" name="rdosqd0"> Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/5.jpg' %}">  <br>
+                            <input type="radio" class="form-check-input" id="rdosqd0" value="1" name="rdosqd0"> Strongly Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/6.png' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd0" value="0" name="rdosqd0"> Not Applicable
+                        </div>
+                  </div>
+                </div>
+
+                <br>
+                <div class="row col-md-12">
+                  <div class="form-group col-sm-12">
+                    <label>SQD1. I spent a reasonable amount of time for my stransaction.</label>
+                  </div>
+                  <div class="row col-md-12">
+                        <div class="form-check col-md-2" style="align-self: middle;">
+                          <img width="40px" src="{% static 'assets/dist/img/1.jpg' %}"><br>
+                          <input type="radio" class="form-check-input" id="rdosqd1" value="5" name="rdosqd1"> Strongly Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/2.jpg' %}"><br>
+                            <input type="radio" class="form-check-input" id="rdosqd1" value="4" name="rdosqd1"> Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/3.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd1" value="3" name="rdosqd1">Neither Agree nor Disagee
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/4.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd1" value="2" name="rdosqd1"> Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/5.jpg' %}">  <br>
+                            <input type="radio" class="form-check-input" id="rdosqd1" value="1" name="rdosqd1"> Strongly Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/6.png' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd1" value="0" name="rdosqd1"> Not Applicable
+                        </div>
+                  </div>
+                </div>
+
+                <br>
+                <div class="row col-md-12">
+                  <div class="form-group col-sm-12">
+                    <label>SQD2. The office followed the transaction's requirements and steps based on  the information previded.</label>
+                  </div>
+                  <div class="row col-md-12">
+                        <div class="form-check col-md-2" style="align-self: middle;">
+                          <img width="40px" src="{% static 'assets/dist/img/1.jpg' %}"><br>
+                          <input type="radio" class="form-check-input" id="rdosqd2" value="5" name="rdosqd2"> Strongly Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/2.jpg' %}"><br>
+                            <input type="radio" class="form-check-input" id="rdosqd2" value="4" name="rdosqd2"> Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/3.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd2" value="3" name="rdosqd2">Neither Agree nor Disagee
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/4.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd2" value="2" name="rdosqd2"> Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/5.jpg' %}">  <br>
+                            <input type="radio" class="form-check-input" id="rdosqd2" value="1" name="rdosqd2"> Strongly Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/6.png' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd2" value="0" name="rdosqd2"> Not Applicable
+                        </div>
+                  </div>
+                </div>
+
+                <br>
+                <div class="row col-md-12">
+                  <div class="form-group col-sm-12">
+                    <label>SQD3. The steps (including payment) I needed to do for my transaction were easy and simple.</label>
+                  </div>
+                  <div class="row col-md-12">
+                        <div class="form-check col-md-2" style="align-self: middle;">
+                          <img width="40px" src="{% static 'assets/dist/img/1.jpg' %}"><br>
+                          <input type="radio" class="form-check-input" id="rdosqd3" value="5" name="rdosqd3"> Strongly Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/2.jpg' %}"><br>
+                            <input type="radio" class="form-check-input" id="rdosqd3" value="4" name="rdosqd3"> Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/3.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd3" value="3" name="rdosqd3">Neither Agree nor Disagee
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/4.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd3" value="2" name="rdosqd3"> Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/5.jpg' %}">  <br>
+                            <input type="radio" class="form-check-input" id="rdosqd3" value="1" name="rdosqd3"> Strongly Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/6.png' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd3" value="0" name="rdosqd3"> Not Applicable
+                        </div>
+                  </div>
+                </div>
+
+                <br>
+                <div class="row col-md-12">
+                  <div class="form-group col-sm-12">
+                    <label>SQD4. I easily found information about my transaction from the office or its website.</label>
+                  </div>
+                  <div class="row col-md-12">
+                        <div class="form-check col-md-2" style="align-self: middle;">
+                          <img width="40px" src="{% static 'assets/dist/img/1.jpg' %}"><br>
+                          <input type="radio" class="form-check-input" id="rdosqd4" value="5" name="rdosqd4"> Strongly Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/2.jpg' %}"><br>
+                            <input type="radio" class="form-check-input" id="rdosqd4" value="4" name="rdosqd4"> Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/3.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd4" value="3" name="rdosqd4">Neither Agree nor Disagee
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/4.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd4" value="2" name="rdosqd4"> Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/5.jpg' %}">  <br>
+                            <input type="radio" class="form-check-input" id="rdosqd4" value="1" name="rdosqd4"> Strongly Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/6.png' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd4" value="0" name="rdosqd4"> Not Applicable
+                        </div>
+                  </div>
+                </div>
+
+                <br>
+                <div class="row col-md-12">
+                  <div class="form-group col-sm-12">
+                    <label>SQD5. I paid a reasonable amount of fees for my stransaction.</label>
+                  </div>
+                  <div class="row col-md-12">
+                        <div class="form-check col-md-2" style="align-self: middle;">
+                          <img width="40px" src="{% static 'assets/dist/img/1.jpg' %}"><br>
+                          <input type="radio" class="form-check-input" id="rdosqd5" value="5" name="rdosqd5"> Strongly Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/2.jpg' %}"><br>
+                            <input type="radio" class="form-check-input" id="rdosqd5" value="4" name="rdosqd5"> Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/3.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd5" value="3" name="rdosqd5">Neither Agree nor Disagee
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/4.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd5" value="2" name="rdosqd5"> Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/5.jpg' %}">  <br>
+                            <input type="radio" class="form-check-input" id="rdosqd5" value="1" name="rdosqd5"> Strongly Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/6.png' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd5" value="0" name="rdosqd5"> Not Applicable
+                        </div>
+                  </div>
+                </div>
+
+                <br>
+                <div class="row col-md-12">
+                  <div class="form-group col-sm-12">
+                    <label>SQD6. I feel the office was fair to everyone, or "walang palakasan", during my transaction.</label>
+                  </div>
+                  <div class="row col-md-12">
+                        <div class="form-check col-md-2" style="align-self: middle;">
+                          <img width="40px" src="{% static 'assets/dist/img/1.jpg' %}"><br>
+                          <input type="radio" class="form-check-input" id="rdosqd6" value="5" name="rdosqd6"> Strongly Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/2.jpg' %}"><br>
+                            <input type="radio" class="form-check-input" id="rdosqd6" value="4" name="rdosqd6"> Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/3.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd6" value="3" name="rdosqd6">Neither Agree nor Disagee
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/4.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd6" value="2" name="rdosqd6"> Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/5.jpg' %}">  <br>
+                            <input type="radio" class="form-check-input" id="rdosqd6" value="1" name="rdosqd6"> Strongly Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/6.png' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd6" value="0" name="rdosqd6"> Not Applicable
+                        </div>
+                  </div>
+                </div>
+
+                
+                <br>
+                <div class="row col-md-12">
+                  <div class="form-group col-sm-12">
+                    <label>SQD7. I was treated courteously by the staff, and (if asked for help) the staff was helpful.</label>
+                  </div>
+                  <div class="row col-md-12">
+                        <div class="form-check col-md-2" style="align-self: middle;">
+                          <img width="40px" src="{% static 'assets/dist/img/1.jpg' %}"><br>
+                          <input type="radio" class="form-check-input" id="rdosqd7" value="5" name="rdosqd7"> Strongly Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/2.jpg' %}"><br>
+                            <input type="radio" class="form-check-input" id="rdosqd7" value="4" name="rdosqd7"> Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/3.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd7" value="3" name="rdosqd7">Neither Agree nor Disagee
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/4.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd7" value="2" name="rdosqd7"> Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/5.jpg' %}">  <br>
+                            <input type="radio" class="form-check-input" id="rdosqd7" value="1" name="rdosqd7"> Strongly Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/6.png' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd7" value="0" name="rdosqd7"> Not Applicable
+                        </div>
+                  </div>
+                </div>
+
+                <br>
+                <div class="row col-md-12">
+                  <div class="form-group col-sm-12">
+                    <label>SQD8. I got what I needed from the government office, or (if denied) denial of request was sufficiently explained to me.</label>
+                  </div>
+                  <div class="row col-md-12">
+                        <div class="form-check col-md-2" style="align-self: middle;">
+                          <img width="40px" src="{% static 'assets/dist/img/1.jpg' %}"><br>
+                          <input type="radio" class="form-check-input" id="rdosqd8" value="5" name="rdosqd8"> Strongly Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/2.jpg' %}"><br>
+                            <input type="radio" class="form-check-input" id="rdosqd8" value="4" name="rdosqd8"> Agree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/3.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd8" value="3" name="rdosqd8">Neither Agree nor Disagee
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/4.jpg' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd8" value="2" name="rdosqd8"> Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/5.jpg' %}">  <br>
+                            <input type="radio" class="form-check-input" id="rdosqd8" value="1" name="rdosqd8"> Strongly Disagree
+                        </div>
+                        <div class="form-check col-md-2">
+                            <img width="40px" src="{% static 'assets/dist/img/6.png' %}"> <br>
+                            <input type="radio" class="form-check-input" id="rdosqd8" value="0" name="rdosqd8"> Not Applicable
+                        </div>
+                  </div>
+                </div>
+
+             </div>
+
+            </div>
+
+  <!-- /.PART III -->
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">PART III.</h3>
+              </div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label>Suggestions on how we can further improve our service (optional):</label>
+                  <textarea class="form-control" rows="3" name="txtsuggestion" id="txtsuggestion" placeholder="Enter ..."></textarea>
+                </div>
+                
+                <label>(optional):</label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                  </div>
+                  <input type="email" class="form-control" name="textemail" id="textemail" placeholder="Email">
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <input type="submit" class="form-submit btn btn-success swalDefaultSuccess">
+            {% if messages %}
+            {% for message in messages  %}
+              <h1>{{message}}</h1>
+            {% endfor %}
+            {% endif %}
+          </form>
+
+<!-- end of form -->
+
+          <!--/.col (left) -->
+          </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 3.1.0
+    </div>
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- bs-custom-file-input -->
+<script src="{% static 'assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'assets/dist/js/adminlte.min.js' %}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'assets/dist/js/demo.js' %}"></script>
+<!-- Page specific script -->
+ <!-- AdminLTE for demo purposes -->
+<script src="{% static 'assets/dist/js/toastr.js' %}"></script>
+
+<script> 
+$(function () {
+  bsCustomFileInput.init();
+});
+
+</script>
+</body>
+</html>

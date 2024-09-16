@@ -1,2 +1,2 @@
-# zscmst-cc
-Client Satisfactory Form
+# Django
+ Djangon Client Survery Form
