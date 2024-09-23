@@ -4,6 +4,7 @@ from . import views
 urlpatterns = [
     path('', views.BASE, name='BASE'),
     path('insertEval', views.insertEval, name='insertEval'),
+    path('get-service/', views.getProcess, name='getProcess'),
 ]
 
 

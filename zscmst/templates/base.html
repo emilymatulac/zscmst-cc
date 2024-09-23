@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | General Form Elements</title>
+  <title>ZSCMST | Feedback Form</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -177,10 +177,24 @@
                             <option value="MIMAROPA">MIMAROPA</option>
                         </select>
                       </div>
-        
+                      <div class="form-group col-md-2">
+                        <label for="txtDate">Office / College</label>
+                        <select name="slcoffice" id="slcoffice" required class="form-control">
+                          <option>-please select office-</option>
+                          {% for desc in office  %}
+                                <option value="{{desc.office_id}}">{{desc.office_desc}}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
                       <div class="form-group col-md-2">
                         <label for="txtDate">Service Availed</label>
-                        <input type="text" class="form-control" id="txtService" name="txtService">
+                       
+                        <select class="form-control" id="txtService" name="txtService">
+                                                  
+                        </select>
+
+                        <label for="txtDate">if you select other, kindly specify</label>
+                        <input type="text" name="txtOther" id="txtOther" class="form-control" >
                       </div>
                     </div>
                     </div>
@@ -626,8 +640,8 @@
               </div>
               <div class="card-body">
                 <div class="form-group">
-                  <label>Suggestions on how we can further improve our service (optional):</label>
-                  <textarea class="form-control" rows="3" name="txtsuggestion" id="txtsuggestion" placeholder="Enter ..."></textarea>
+                  <label>Suggestions on how we can further improve our service :</label>
+                  <textarea class="form-control" required rows="3" name="txtsuggestion" id="txtsuggestion" placeholder="Enter ..."></textarea>
                 </div>
                 
                 <label>(optional):</label>
@@ -662,7 +676,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.1.0
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2024 <a href="https://zscmst.edu.ph">ZSCMST-CISO</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->
@@ -691,6 +705,49 @@
 $(function () {
   bsCustomFileInput.init();
 });
+
+$("#slcoffice").on("change",function(){
+    document.getElementById("txtService").innerHTML = "";
+
+    var str = "";
+    $.ajax({
+      type: 'GET',
+      url: "get-service/",
+      data:{
+        office: $("#slcoffice").val(),
+      },
+      dataType: 'json',
+      success: function(response){
+        var select = document.getElementById("txtService");
+
+        for(var i=0; i<response.process.length;i++)
+          {
+            var option = document.createElement("option");
+           option.value = response.process[i]["process_desc"];
+           option.innerHTML = response.process[i]["process_desc"];
+           select.appendChild(option);
+            //str += "<option value='"+response.process[i]['process_desc']+"'>"+response.process[i]["process_desc"]+"</option>";
+          //  alert(str);
+           // $("#txtService").append(str);
+          }
+          var option = document.createElement("option");
+          option.value = "Others";
+          option.innerHTML = "Others";
+          select.appendChild(option);
+          $("#txtservice").html(str);
+         
+      },
+    });
+});
+
+$("#txtService").on("change", function(){
+  var othr = $(this).val();
+  if(othr == "Others") {
+   $("#txtOther").attr("required", "required");
+  }else {
+    $("#txtOther").removeAttr("required");
+  }
+}); 
 
 </script>
 </body>
