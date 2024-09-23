@@ -58,6 +58,23 @@ class CitizenCharter(models.Model):
     eval_suggestion = models.CharField(max_length=250, default="")
     eval_email = models.CharField(max_length=30, default="")
     eval_name = models.CharField(max_length=30, default="")
+    eval_other = models.CharField(max_length=100, default="")
 
     class Meta:
         db_table = "tblcitizen"
+
+class TableProcess(models.Model):
+    process_id = models.AutoField(primary_key=True)
+    office_id = models.IntegerField(default=0)
+    process_desc = models.CharField(max_length=255)
+    
+    class Meta:
+        db_table = "tblprocess"
+
+class TableOffice(models.Model):
+    office_id = models.AutoField(primary_key=True)
+    office_code = models.CharField(max_length=20, default="0")
+    office_desc = models.CharField(max_length=100)
+    
+    class Meta:
+        db_table = "tbloffice"
