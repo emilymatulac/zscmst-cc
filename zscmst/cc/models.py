@@ -59,6 +59,7 @@ class CitizenCharter(models.Model):
     eval_email = models.CharField(max_length=30, default="")
     eval_name = models.CharField(max_length=30, default="")
     eval_other = models.CharField(max_length=100, default="")
+    office_id = models.IntegerField(default=0);
 
     class Meta:
         db_table = "tblcitizen"
