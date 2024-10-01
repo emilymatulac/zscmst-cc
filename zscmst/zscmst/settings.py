@@ -89,7 +89,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'zscmst_db',
         'USER': 'root',
-        'PASSWORD': 'Or@cle101',
+        'PASSWORD': 'root',
         'HOST':'localhost',
         'PORT':'3306'
     }

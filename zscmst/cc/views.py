@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from .models import CitizenCharter
 from datetime import datetime
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from .models import *
+from django.core import serializers
+from django.db.models import Count
+from django.template import loader
 # from .models import Post
 # from django.contrib.auth.decorators import login_required
 # from . import forms
@@ -20,6 +23,13 @@ from .models import *
 #     form = forms.CreatePost()
 #     return render(request,'posts/post_new.html', {'form':form})
 
+def AdminDashboard(request):
+    return render(request, 'dashboard.html')
+
+def AdminLogin(request):
+    return render(request, 'login-admin.html')
+
+
 def BASE(request):
     office = TableOffice.objects.all()
     context = {
@@ -27,6 +37,7 @@ def BASE(request):
     }
     return render(request, 'base.html', context)
    # return render(request, 'base.html')
+
 
 def insertEval(request):
     now = datetime.now()
@@ -77,3 +88,13 @@ def getProcess(request):
         "process" : process
     }
     return JsonResponse(response_data)
+
+def getClientperMonth(request, queryset, **options):
+
+    queryset = CitizenCharter.objects.values('office_id').annotate(count=Count('office_id'))
+    
+    context = {
+        'office_id' : queryset,
+    }
+
+    return render(request, "dashboard.html",context)

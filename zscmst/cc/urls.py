@@ -5,6 +5,8 @@ urlpatterns = [
     path('', views.BASE, name='BASE'),
     path('insertEval', views.insertEval, name='insertEval'),
     path('get-service/', views.getProcess, name='getProcess'),
+    path('login-admin/', views.AdminLogin, name='admin-login'),
+    path('dashboard/', views.getClientperMonth, name='dashboard')
 ]
 
 

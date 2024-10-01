@@ -37,7 +37,7 @@ from datetime import date
 
 class CitizenCharter(models.Model):
     eval_id = models.AutoField(primary_key=True)
-    eval_citizenttype = models.CharField(max_length=50, default="")
+    eval_citizenttype = models.CharField(max_length=50, default="1")
     eval_date = models.CharField(max_length=50, default="")
     eval_sex = models.CharField(max_length=1, default="0")
     eval_age= models.IntegerField()
